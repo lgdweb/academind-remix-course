@@ -10,19 +10,19 @@ export const meta = () => ({
   viewport: 'width=device-width,initial-scale=1'
 })
 
-export default function App() {
-  return (
-    <html lang='en' className='bg-zinc-900 text-zinc-50'>
-      <head>
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        {process.env.NODE_ENV !== 'production' && <LiveReload />}
-      </body>
-    </html>
-  )
-}
+const App = () => (
+  <html lang='en' className='bg-zinc-900 text-zinc-50'>
+    <head>
+      <Meta />
+      <Links />
+    </head>
+    <body className='min-h-screen bg-gradient-to-tr from-indigo-700/90 via-violet-700/80 to-purple-600'>
+      <Outlet />
+      <ScrollRestoration />
+      <Scripts />
+      {process.env.NODE_ENV !== 'production' && <LiveReload />}
+    </body>
+  </html>
+)
+
+export default App
