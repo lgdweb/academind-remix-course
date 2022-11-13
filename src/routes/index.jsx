@@ -1,23 +1,17 @@
-import { Link as LinkComponent } from '@remix-run/react'
+import { Link } from '@remix-run/react'
 import tw from 'tailwind-styled-components'
 
-const Container = tw.div`
-  flex
-  items-center
-  justify-center
-  flex-col
-  w-full
-  bg-indigo-600
-`
-
-const Title = tw.h1`text-5xl font-bold text-rose-400`
-const Link = tw(LinkComponent)`text-blue-300 underline`
+const Main = tw.main`text-center text-zinc-100/80`
+const Button = tw(Link)`rounded bg-orange-300 px-8 py-2 text-3xl text-purple-800 no-underline`
 
 const IndexPage = () => (
-  <Container>
-    <Title>Hello Remix!!!</Title>
-    <Link to={'/demo'}>Go to Demo Page</Link>
-  </Container>
+  <Main>
+    <h1 className='p-4 text-5xl font-bold'>A better way of keeping track of your notes!</h1>
+    <p className='m-2 text-xl'>Try our early beta and never loose track of your notes again!</p>
+    <p className='mt-8'>
+      <Button to='/notes'>Try Now!</Button>
+    </p>
+  </Main>
 )
 
 export default IndexPage
