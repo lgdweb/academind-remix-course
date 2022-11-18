@@ -1,6 +1,6 @@
 import { json } from '@remix-run/node'
 
-import { NoteList } from '~/components'
+import { NotesList } from '~/components'
 import { getStoredNotes } from '~/lib'
 
 export const loader = async () => {
@@ -9,6 +9,6 @@ export const loader = async () => {
   return json(notes)
 }
 
-const NotesPage = () => <NoteList />
+const NotesPage = () => <NotesList />
 
 export default NotesPage
