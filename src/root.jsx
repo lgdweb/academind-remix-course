@@ -1,5 +1,7 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react'
 
+import { MainNavigation } from '~/components'
+
 import tailwind from './tailwind.css'
 
 export const links = () => [{ rel: 'stylesheet', href: tailwind }]
@@ -17,6 +19,9 @@ const App = () => (
       <Links />
     </head>
     <body className='min-h-screen bg-gradient-to-tr from-indigo-700/90 via-violet-700/80 to-purple-600'>
+      <header>
+        <MainNavigation />
+      </header>
       <Outlet />
       <ScrollRestoration />
       <Scripts />
