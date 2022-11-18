@@ -7,3 +7,10 @@ export const getStoredNotes = async () => {
 
   return storedNotes
 }
+
+export const getStoredNoteById = async noteId => {
+  const notes = await getStoredNotes()
+  const selectedNote = notes.find(note => note.id === noteId)
+
+  return selectedNote
+}
