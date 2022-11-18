@@ -1,0 +1,10 @@
+{
+  "notes": [
+    { "title": "New Note", "content": "A new note!", "id": "7c14c02a-1e01-40c8-9675-55727b5a3bb3" },
+    {
+      "title": "Remix is awesome!",
+      "content": "It really is!",
+      "id": "a0874856-a59b-4981-9750-16605382b9d4"
+    }
+  ]
+}
