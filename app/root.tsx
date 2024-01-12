@@ -1,16 +1,20 @@
+import { cssBundleHref } from '@remix-run/css-bundle'
+import { type LinksFunction } from '@remix-run/node'
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react'
 
 import { MainNavigation } from '~/components'
+import tailwindStylesheetLink from '~/styles/tailwind.css'
 
-import tailwind from './tailwind.css'
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: tailwindStylesheetLink },
+  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : [])
+]
 
-export const links = () => [{ rel: 'stylesheet', href: tailwind }]
-
-export const meta = () => ({
-  charset: 'utf-8',
-  title: 'New Remix App',
-  viewport: 'width=device-width,initial-scale=1'
-})
+export const meta = () => [
+  { name: 'charset', content: 'utf-8' },
+  { title: 'New Remix App' },
+  { name: 'viewport', content: 'width=device-width,initial-scale=1' }
+]
 
 const App = () => (
   <html lang='en' className='bg-zinc-900 text-zinc-50'>
